@@ -1,0 +1,25 @@
+.sidebar-logo{
+  width: 50px;
+  height: 40px;
+}
+
+.sidebar-logo-container{
+ margin: 10px 0;
+}
+
+.sidebar-item{
+  padding: 17px 0;
+}
+
+.sidebar-item:hover{
+  background: #3C4B5F;
+}
+
+.sidebar-item img{
+  width: 18px;
+  height: 18px;
+}
+
+.flipped{
+  transform: scaleX(-1);
+}

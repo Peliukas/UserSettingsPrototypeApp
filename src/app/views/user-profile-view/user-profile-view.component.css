@@ -1,0 +1,112 @@
+*{
+  font-family: 'IBM Plex Sans', sans-serif!important;
+}
+
+.card-title{
+  font-size: 16px;
+  line-height: 16px;
+  color: rgb(109,127,151);
+}
+
+.card{
+  max-width: 60%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0.521px 2.954px 6px rgba(0,0,0,0.08);
+}
+
+.user-profile-picture{
+  width: 100px;
+  height: 100px;
+  border-radius: 150px;
+  box-shadow: 0px 10px 25px lightgrey;
+}
+
+.upload-image-button{
+  background: white;
+  border: 1px solid #697483;
+  border-radius: 5px;
+  font-weight: 700;
+  padding: 3px 10px;
+}
+
+.upload-image-message, .upload-image-message span{
+  line-height: 4px;
+  font-size: 0.9em;
+  color: #77889e;
+}
+
+.upload-profile-picture-container{
+  position: relative;
+}
+
+.profile-picture-upload-input{
+  position: absolute;
+  left: 0;
+  width: 100px;
+  height: 25px;
+  opacity: 0;
+}
+
+.input-field{
+  width: 96%;
+  height: 42px;
+  border-radius: 4px;
+  margin-top: 5px;
+  background-color: #f9fafc;
+  border: 1px solid #b5bfcb;
+  padding-left: 10px;
+  font-size: medium;
+  font-weight: 700;
+  color: #4d5a6c;
+}
+
+.input-group{
+  margin-bottom: 2em;
+}
+
+.input-group span{
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  color: rgb(109,127,151);
+}
+
+.save-changes-button{
+  font-size: 15px;
+  line-height: 22px;
+  width: 94px;
+  height: 40px;
+  border-radius: 6px;
+  background-color: #019bb3;
+  border: none;
+  float: right;
+}
+
+.save-changes-button span, /deep/ .save-changes-button fa i{
+  color: rgb(255,255,255);
+}
+
+.card-footer{
+  background: #f4f6f9;
+}
+
+.info-message-wrapper{
+  padding: 5px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.info-message-wrapper span, /deep/ .info-message-wrapper fa i{
+  color: white;
+}
+
+.message-success{
+  background: #23d160;
+}
+
+.message-danger{
+  background: #ff3860;
+}

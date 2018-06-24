@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+
+.page-grid{
+  display: grid;
+  grid-template-columns: 1fr 15fr;
+  height: 100vh;
+}
+
+.page-sidebar{
+  background: #324156;
+}
+
+.page-content{
+  background: #f4f6f9;
+  padding: 35px;
+}
+
+.light-divider{
+  border-bottom: 0px;
+  border-top: 1px solid #f3f5f9;
+}
+
+.dark-divider{
+  border-bottom: 0px;
+  border-top: 1px solid #6d7f97;
+}
+
+.medium-padding-bottom{
+  padding-bottom: 20px;
+}
+
+.medium-padding-vertical{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.medium-padding-horizontal{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.medium-margin-horizontal{
+  margin: 0 20px;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.flex-space-between{
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-center-vertical{
+  display: flex;
+  align-items: center;
+}
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-item{
+  padding: 10px;
+}
+
+.button-disabled{
+  background-color: gray!important;
+}

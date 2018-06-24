@@ -1,0 +1,91 @@
+<div class="card">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="card-title">Edit profile</h3>
+      </div>
+    </div>
+  </div>
+  <hr class="light-divider">
+  <div class="container medium-padding-vertical">
+    <div class="row">
+      <div class="col-12 flex-center-vertical">
+        <img [src]="userImageUrl ? userImageUrl : '../../../assets/images/profile-placeholder.jpg'" class="user-profile-picture">
+        <div class="upload-profile-picture-container medium-margin-horizontal">
+          <button class="upload-image-button">Upload image</button>
+          <input type="file" #profilePicture (change)="onFileChanged($event)" class="profile-picture-upload-input">
+          <p class="upload-image-message">
+            <span>Minimum size is 250 x 250 px</span><br>
+            <span>Only JPG and PNG images are allowed</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form class="container medium-padding-bottom">
+    <div class="row" [formGroup]="userEditFormGroup">
+      <div class="col-6 input-group">
+        <div>
+          <span>First name</span>
+        </div>
+        <input class="input-field" formControlName="user_firstname" type="text" placeholder="Christian">
+      </div>
+      <div class="col-6 input-group">
+        <div>
+          <span>Last name</span>
+        </div>
+        <input class="input-field" formControlName="user_lastname" type="text" placeholder="Bale">
+      </div>
+      <div class="col-6 input-group">
+        <div>
+          <span>E-mail</span>
+        </div>
+        <input class="input-field" formControlName="user_email" type="email" placeholder="christian@bale.com">
+      </div>
+      <div class="col-6 input-group">
+        <div>
+          <span>Phone number</span>
+        </div>
+        <input class="input-field" formControlName="user_phone" type="tel" placeholder="+45 554433">
+      </div>
+      <div class="col-12">
+        <hr class="dark-divider">
+      </div>
+      <div class="col-6 input-group">
+        <div>
+          <span>Password</span>
+        </div>
+        <input class="input-field" formControlName="user_password" type="password" placeholder="password" value="password">
+      </div>
+      <div class="col-6 input-group">
+        <div>
+          <span>Repeat password</span>
+        </div>
+        <input class="input-field" [formControl]="userRepeatPassword" type="password" placeholder="password" value="password">
+      </div>
+    </div>
+  </form>
+  <div class="row medium-padding-vertical card-footer">
+    <div class="container">
+        <div class="col-12">
+          <button class="save-changes-button"
+                  [class.button-disabled]="(userEditFormGroup.get('user_password').value !== userRepeatPassword.value) || (!userEditFormGroup.valid || userRepeatPassword.value === '')"
+                  [disabled]="(userEditFormGroup.get('user_password').value !== userRepeatPassword.value) || (!userEditFormGroup.valid || userRepeatPassword.value === '')" (click)="submitChanges()">
+            <span *ngIf="!sending">
+              Save
+            </span>
+            <fa *ngIf="sending" name="spinner" animation="spin"></fa>
+          </button>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="info-message-wrapper flex-space-between" *ngIf="displayInfoMessage" [class.message-success]="status === 'success'" [class.message-danger]="status === 'fail'">
+  <div class="flex-center">
+    <fa name="check" class="medium-margin-horizontal"></fa>
+    <span class="text-center">{{infoMessage}}</span>
+  </div>
+  <div (click)="displayInfoMessage = false">
+    <fa name="close" class="medium-margin-horizontal"></fa>
+  </div>
+</div>
